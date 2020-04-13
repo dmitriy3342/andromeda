@@ -47,13 +47,12 @@
 		// Add audio
     let audio = document.createElement('audio');
     audio.style.display = "none";
+    document.body.append(audio);
     audio.src =  "https://dmitriy3342.github.io/andromeda/music/Metallic Suns.mp3";
-    audio.autoplay = true;
     audio.loop = true
-    // audio.onended = function(){
-    //     audio.remove() //Remove when played.
-    // };
-    document.body.appendChild(audio);
+    audio.oncanplay = function(){
+        audio.play()
+    }
 
 }
 addAdditional()</script><tw-passagedata pid="1" name="Начало истории" tags="" position="403,250" size="200,100">История началась в 1922 году, в далёком космосе. Марсианский корабль R2.0, перевозящий очень ценный артефакт, из-за сбоя в навигационной системе, столкнулся с кометой Хелин-Мюре. В следствии столкновения, повредился бортовой компьютер, сместилась траектория полета корабля и был уничтожен модуль посадки. В результате корабль потерпел крушение на планете Земля. Весь экипаж погиб…
