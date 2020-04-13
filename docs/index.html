@@ -50,9 +50,55 @@
     document.body.append(audio);
     audio.src =  "https://dmitriy3342.github.io/andromeda/music/Metallic Suns.mp3";
     audio.loop = true
-    audio.oncanplay = function(){
+		
+		// Start game screen
+		
+		let startGame = document.createElement("div")
+    startGame.style.position = "fixed"
+    startGame.style.width = "100%"
+    startGame.style.height = "100%"
+    startGame.style.top = "0"
+    startGame.style.zIndex = "1"
+    startGame.style.backgroundImage = 'URL("https://dmitriy3342.github.io/andromeda/imgs/start_game_background.jpg")'
+    startGame.style.backgroundRepeat = "no-repeat"
+    startGame.style.backgroundSize = "cover"
+    startGame.style.backgroundPosition = "center top"
+
+    document.body.append(startGame)
+
+
+    let startGameBtn = document.createElement("div")
+    startGameBtn.style.backgroundImage = 'URL("https://dmitriy3342.github.io/andromeda/imgs/milky-way-2695569_1920.jpg")'
+    startGameBtn.style.backgroundRepeat = "no-repeat"
+    startGameBtn.style.backgroundSize = "cover"
+    startGameBtn.style.top = "80%"
+    startGameBtn.style.fontSize = "2em"
+    startGameBtn.style.color = "#ffffff"
+    startGameBtn.style.padding = "0.2em"
+    startGameBtn.style.boxShadow = "-2px 1px 6px 2px black"
+
+    // startGameBtn.style.width = "100%"
+    // startGameBtn.style.height = "100%"
+    startGameBtn.textContent = "Начать играть"
+    startGameBtn.align = "center"
+
+    startGameBtn.addEventListener("click", function () {
+        // startGameBtn.style.backgroundImage = "none"
+        startGame.remove()
         audio.play()
-    }
+    })
+
+    startGameBtn.addEventListener("mouseover",function () {
+        startGameBtn.style.backgroundImage = "none"
+        // audio.play()
+    })
+
+    startGameBtn.addEventListener("mouseleave",function () {
+        startGameBtn.style.backgroundImage = 'URL("https://dmitriy3342.github.io/andromeda/imgs/milky-way-2695569_1920.jpg")'
+        // audio.play()
+    })
+
+    startGame.append(startGameBtn)
 
 }
 addAdditional()</script><tw-passagedata pid="1" name="Начало истории" tags="" position="403,250" size="200,100">История началась в 1922 году, в далёком космосе. Марсианский корабль R2.0, перевозящий очень ценный артефакт, из-за сбоя в навигационной системе, столкнулся с кометой Хелин-Мюре. В следствии столкновения, повредился бортовой компьютер, сместилась траектория полета корабля и был уничтожен модуль посадки. В результате корабль потерпел крушение на планете Земля. Весь экипаж погиб…
